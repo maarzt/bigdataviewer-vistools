@@ -105,4 +105,9 @@ public class BdvVirtualChannelSource extends BdvSource
 	{
 		getBdvHandle().getViewerPanel().getVisibilityAndGrouping().setSourceActive( source.getSpimSource(), isActive );
 	}
+
+	@Override
+	public boolean isActive() {
+		return getBdvHandle().getViewerPanel().getVisibilityAndGrouping().isSourceActive( source.getSpimSource() );
+	}
 }
