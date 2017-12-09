@@ -81,6 +81,11 @@ public class BdvOverlaySource< O extends OverlayRenderer > extends BdvSource
 	}
 
 	@Override
+	public ARGBType getColor() {
+		return setup.getColor();
+	}
+
+	@Override
 	public void setCurrent()
 	{
 		getBdvHandle().getViewerPanel().getVisibilityAndGrouping().setCurrentSource( source.getSpimSource() );

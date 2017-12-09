@@ -86,6 +86,11 @@ public class BdvVirtualChannelSource extends BdvSource
 	}
 
 	@Override
+	public ARGBType getColor() {
+		return setup.getColor();
+	}
+
+	@Override
 	public void setCurrent()
 	{
 		getBdvHandle().getViewerPanel().getVisibilityAndGrouping().setCurrentSource( source.getSpimSource() );

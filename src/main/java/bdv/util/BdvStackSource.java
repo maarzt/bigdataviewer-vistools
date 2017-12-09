@@ -55,6 +55,13 @@ public class BdvStackSource< T > extends BdvSource
 	}
 
 	@Override
+	public ARGBType getColor() {
+		for ( final ConverterSetup setup : converterSetups )
+			return setup.getColor();
+		return new ARGBType(0);
+	}
+
+	@Override
 	public void setDisplayRange( final double min, final double max )
 	{
 		final HashSet< MinMaxGroup > groups = new HashSet<>();

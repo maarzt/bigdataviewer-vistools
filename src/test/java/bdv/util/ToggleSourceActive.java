@@ -6,6 +6,9 @@ import net.imglib2.type.numeric.ARGBType;
 import net.imglib2.type.numeric.integer.IntType;
 import org.junit.Test;
 
+import java.awt.*;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -19,5 +22,15 @@ public class ToggleSourceActive {
 		assertTrue(stackSource.isActive());
 		stackSource.setActive(false);
 		assertFalse(stackSource.isActive());
+	}
+
+	@Test
+	public void testGetColor() {
+		final Img<IntType> img = ArrayImgs.ints( 10, 10, 10 );
+		BdvStackSource<IntType> stackSource = BdvFunctions.show(img, "image");
+		ARGBType expected = new ARGBType(Color.red.getRGB());
+		stackSource.setColor(expected);
+		ARGBType actual = stackSource.getColor();
+		assertEquals(expected.get(), actual.get());
 	}
 }

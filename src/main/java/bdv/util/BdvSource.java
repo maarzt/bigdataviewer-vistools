@@ -25,6 +25,8 @@ public abstract class BdvSource implements Bdv
 
 	public abstract void setColor( final ARGBType color );
 
+	public abstract ARGBType getColor();
+
 	public abstract void setCurrent();
 
 	public abstract boolean isCurrent();
